@@ -62,3 +62,58 @@
   <input type="text" placeholder="cat photo URL" required>
   <button type="submit">Submit</button>
 </form>
+
+<!-- margin, padding, border -->
+<style>
+  .injected-text {
+    margin-bottom: -25px;
+    text-align: center;
+  }
+
+  .box {
+    border-style: solid;
+    border-color: black;
+    border-width: 5px;
+    text-align: center;
+  }
+
+  .yellow-box {
+    background-color: yellow;
+    padding: 20px 40px 20px 40px;
+  }
+  
+  .red-box {
+    background-color: red;
+    margin: 20px 40px 20px 40px;
+  }
+
+  .green-box {
+    background-color: green;
+    margin: 40px 20px 20px 40px
+  }
+</style>
+<h5 class="injected-text">margin</h5>
+
+<div class="box yellow-box">
+  <h5 class="box red-box">padding</h5>
+  <h5 class="box green-box">padding</h5>
+</div>
+
+<!-- background layout and styling-->
+<style>
+  body {
+    background-color: black;
+    font-family: Monospace;
+    color: green;
+  }
+  #orange-text {
+    color: orange;
+  }
+  .pink-text {
+    color: pink !important;
+  }
+  .blue-text {
+    color: blue;
+  }
+</style>
+<h1 id="orange-text" class="pink-text blue-text " style="color: white">Hello World!</h1>
