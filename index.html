@@ -7,7 +7,7 @@
 </head>
 <body>
 <link href= "https://fonts.googleapis.com/css?family=Tangerine" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" >
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />
 <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
 
@@ -30,7 +30,6 @@ background-image: url("https://cdn57.androidauthority.net/wp-content/uploads/201
   background-color: purple;
   overflow: ;
   height: 60px;
-  positi
   width: 100%;
 }
 .topnav a:hover{
@@ -79,6 +78,9 @@ a{
 .well{
 background-color:#8A2BE2;
 }
+.write input{
+margin-right: -300px
+}
 
 p{
 color:white;
@@ -93,29 +95,86 @@ font-size: 30px;
 }
 
 .profile h1{
-  font-family: Courier;
+  font-family: monospace;
 }
 .profile p{
   font-style: italic;
   font-size:20px;
-  text-align: right;
+  text-align: center;
   max-width: 100%
 }
+
+#sign{
+  float:right;
+  font-style: oblique;
+  margin-left: :3px;
+}
+button{
+  margin-left: 20px;
+  margin-top: 10px;
+  width: 7px;
+}
+.btn-block{
+  width:90px;
+}
+
+.deso img{
+width:30%;
+border:solid;
+border-color:#DDA0DD;
+border-radius: 
+
+}
+#sign-in label{
+  float: right;
+  margin-top: 20px;
+}
+.sret{
+  float:right;
+}
+legend{
+  color:white;
+}
+.ter{
+  text-transform: lowercase;
+  color:#4169E1;
+  margin-top:30px;
+  font-size: 35px;
+  font-family:Tangerine;
+  margin-left: 5px;
+}
+
+
 </style>
 <div class="topnav" id="mytopnav">
+  
 <a href="#">Home</a>
-<a   href="#">about</a>
-<a href="#">contact</a>
+<a   href="#aboutme">about</a>
+<a href="#postbottom">contact</a>
+<div class="container">
+<a href="#" id="sign" > Signup</a>
 </div>
-
-
-
-<div class=" container-fluid">
+</div>
+<div class="sret">
+ <form action="/submit" method="post">
+  <fieldset>
+    <legend> Login details</legend>
+  <br>
+  <input type="text" name="firstname" placeholder="input your name" required><br>
+  <br>
+  <input type="text" name="lastname" placeholder="input your password" required><br>
+<button class="btn btn-block" type="submit" name="SUBMIT"   >Login</button>
+</fieldset>
+  
+</form>
+</div>
+<div class=" container">
   
   <div class="row">
     <div class="write col-md-2">
-<strong><h1 class="text-center" >  NAS COLLECTION </h1></strong>
-<div class="social well">
+<strong><h1 class="text-center" >  SHEGS PORTFOLIO </h1></strong>
+
+<div class="social ">
 <button class="btn btn-block fa fa-facebook"><a href="https://web.facebook.com/nasrullah.oluwasegun"> Facebook</a></button>
 
 <button class="btn btn-block fa fa-twitter"><a href="#"> Twitter</a></button>
@@ -124,21 +183,29 @@ font-size: 30px;
 
 </div>
 <div class="profile">
-  <h1 style="color: white" class="profile text-center"> ABOUT ME </h1>
-  <p class="text-center">Several years after leaving est (in 1985) I created the first of The Lefkoe Method (TLM) processes, the Lefkoe Belief Process.  Because I didn’t fully  understand how it worked and how to use it effectively on myself, it took many years before I was able to eliminate enough beliefs and conditionings to rid myself of my depression, unhappiness, and relationships difficulties.</p>
+  <h1 style="color:#FF7F50" class="profile text-center" id="aboutme"> ABOUT ME </h1>
+  <p class="text-center">I have positive personality with the right combination of attitude, knowledge,and skills to make a difference in any organization. I possess leadership skills and also self-driven with capability to work with little or no supervision. Quick and willing to assimilate and apply new work procedures..</p>
 </div>
 </div>
 </div>
+<div class="container deso">
 
+<a href="#"> <img style="margin-left: 60px;" class="red" src="http://www.sahistory.org.za/sites/default/files/nelson_mandela_1918_2013.jpg"/></a>
+  </div>
+</div>
 
-
-
+<div class="container">
+ <strong> <p class="ter" id="postbottom">Phone number: +2348136932264 </p></strong>
+ <strong><p style="font-family:Tangerine; color:#4169E1; text-transform: lowercase;"> email-address: nasirullahoni@yahoo.co.uk</p></strong>
+</div>
+</div>
 
 
 
 <script>
   $(document).ready(function(){
   $("h1").addClass("animated shake"); 
+  $(".sret").children().css("color" "white")
   });
 </script>
 </body>
