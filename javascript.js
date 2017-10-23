@@ -61,27 +61,232 @@ timesFive(32);
 
 
 
-function testSize(num) {
+
+
+
+
+
+
+
+
+
+
+var count = 0;
+
+var report ="";
+
+function cc(card) {
   // Only change code below this line
-  if(num<5){
-    return "Tiny";
-  }
-  else if (num<10){
-    return "Small";
-  }
-  else if (num<15) {
-    return "Medium";
-  }
+ switch (card){
+   case 2:
+   case 3:
+   case 4:
+   case 5:
+   case 6:
+     count+=1;
+     report = count + " Bet";
+     break;
+   case 7:
+   case 8:
+   case 9:
+     report = count + " Hold";
+     break;
+     
+   case 10:
+   case "J":
+   case "Q":
+   case "K":
+   case "A":
+     count -=1;
+     report = count + " Hold" ||" Bet";
+     break;
+     
+ }
   
-  else if (num<20){
-    return "Large";
-  }
-  else if (num >=20){
-    return "Huge";
-  }
-  return "Change Me";
+  return report;
   // Only change code above this line
 }
 
+// Add/remove calls to test your function.
+// Note: Only the last will display
+cc(2); cc("J"); cc(9); cc(2); cc(7);
+
+
+
+
+ function phoneticLookup(val) {
+  var result = "";
+
+  // Only change code below this line
+var myObj  ={
+    
+    "alpha" :"Adams",
+    "bravo" : "Boston",
+    "charlie":"Chicago",
+    "delta" : "Denver",
+    "echo" : "Easy",
+    "foxtrot": "Frank"
+  };
+   result = myObj[val];
+  // Only change code above this line
+  return result;
+}
+
 // Change this value to test
-testSize(100);
+phoneticLookup("charlie");
+
+
+
+
+
+// Setup
+var myObj = {
+  gift: "pony",
+  pet: "kitten",
+  bed: "sleigh"
+};
+
+function checkObj(checkProp) {
+  // Your Code Here
+  if (myObj.hasOwnProperty(checkProp) === true){
+    return myObj[checkProp];
+  } 
+  else{
+    return "Not Found";
+  }
+}
+
+// Test your code by modifying these values
+checkObj("gift");
+
+
+var myMusic = [
+  {
+    "artist": "Billy Joel",
+    "title": "Piano Man",
+    "release_year": 1973,
+    "formats": [ 
+      "CS", 
+      "8T", 
+      "LP" ],
+    "gold": true
+  },
+  // Add record here
+
+{
+  
+  "artist":"Dele",
+  "title": "The man",
+  "release_year": 1984,
+  "formats": ["Ds","8Y","lp"]
+  
+}
+
+
+];
+
+var myStorage = {
+  "car": {
+    "inside": {
+      "glove box": "maps",
+      "passenger seat": "crumbs"
+     },
+    "outside": {
+      "trunk": "jack"
+    }
+  }
+};
+
+// Only change code below this line
+
+var gloveBoxContents = myStorage.car.inside["glove box"]; // Change this line
+
+
+var ourArray = [];
+
+for (var i = 0; i < 10; i += 2) {
+  ourArray.push(i);
+}
+
+// Setup
+var myArray = [];
+
+// Only change code below this line.
+
+for(var i=1; i<=9; i+=2){
+  myArray.push(i);
+  
+}
+
+
+// Example
+var ourArray = [];
+
+for (var i = 10; i > 0; i -= 2) {
+  ourArray.push(i);
+}
+
+// Setup
+var myArray = [];
+
+// Only change code below this line.
+
+for (var i =9; i>0; i-=2){
+  myArray.push(i);
+  
+}
+
+
+
+
+var ourArr = [ 9, 10, 11, 12];
+var ourTotal = 0;
+
+for (var i = 0; i < ourArr.length; i++) {
+  ourTotal += ourArr[i];
+}
+
+// Setup
+var myArr = [ 2, 3, 4, 5, 6];
+
+// Only change code below this line
+
+var total =0;
+for(var i=0; i< myArr.length; i++){
+  total+=myArr[i];
+}
+console.log(total);
+
+
+function multiplyAll(arr) {
+  var product = 1;
+  // Only change code below this line
+  for(var i=0; i<arr.length; i++){
+    for(var j=0; j<arr[i].length; j++){
+      product*=arr[i][j];
+      
+    }
+  console.log(product);
+  
+  }
+  
+  // Only change code above this line
+  return product;
+}
+
+// Modify values below to test your code
+multiplyAll([[1,2],[3,4],[5,6,7]]);
+
+
+
+// Setup
+var myArray = [];
+
+// Only change code below this line.
+var i =0;
+while (i<5){
+  myArray.push(i);
+  i++;
+}
+
+
