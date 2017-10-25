@@ -289,4 +289,94 @@ while (i<5){
   i++;
 }
 
+var contacts = [
+    {
+        "firstName": "Akira",
+        "lastName": "Laine",
+        "number": "0543236543",
+        "likes": ["Pizza", "Coding", "Brownie Points"]
+    },
+    {
+        "firstName": "Harry",
+        "lastName": "Potter",
+        "number": "0994372684",
+        "likes": ["Hogwarts", "Magic", "Hagrid"]
+    },
+    {
+        "firstName": "Sherlock",
+        "lastName": "Holmes",
+        "number": "0487345643",
+        "likes": ["Intriguing Cases", "Violin"]
+    },
+    {
+        "firstName": "Kristian",
+        "lastName": "Vos",
+        "number": "unknown",
+        "likes": ["Javascript", "Gaming", "Foxes"]
+    }
+];
+
+
+function lookUpProfile(firstName, prop){
+// Only change code below this line
+for (var x = 0; x < contacts.length; x++){
+    if (contacts[x].firstName === firstName) {
+        if (contacts[x].hasOwnProperty(prop)) {
+            return contacts[x][prop];
+        } else {
+            return "No such property";
+        }
+    }
+}
+return "No such contact";
+// Only change code above this line
+}
+
+// Change these values to test your function
+lookUpProfile("Akira", "likes");
+9
+
+
+
+
+function randomRange(myMin, myMax) {
+
+  return Math.floor(Math.random()*(myMax-myMin+1)) + myMin; // Change this line
+
+}
+
+// Change these values to test your function
+var myRandom = randomRange(7, 24);
+
+
+
+var kamal =" the man is going to different schools becaUSE OF HIS OLD AGE 8,5,90";
+var sed = "the man is 45 and 90";
+
+var tester = /\d+/g
+
+var know = kamal .match (tester).length
+
+console.log(know)
+
+
+
+//Constructor
+
+var Car = function() {
+  this.wheels = 4;
+  this.engines = 1;
+  this.seats = 5;
+};
+
+// Only change code below this line.
+
+var MotorBike = function() {
+this.wheels = 7;
+ this .engines = 9;
+  this . seats = 11;
+
+};
+
+
 
