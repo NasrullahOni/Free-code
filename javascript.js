@@ -379,4 +379,143 @@ this.wheels = 7;
 };
 
 
+\
 
+
+
+
+var Car = function(wheels, seats, engines) {
+  //Change this constructor
+  this.wheels = wheels;
+  this.seats = seats;
+  this.engines = engines;
+};
+
+//Try it out here
+var myCar = new Car(9,6,4);
+
+
+
+
+
+
+
+
+var Car = function() {
+  // this is a private variable
+  var speed = 10;
+
+  // these are public methods
+  this.accelerate = function(change) {
+    speed += change;
+  };
+
+  this.decelerate = function() {
+    speed -= 5;
+  };
+
+  this.getSpeed = function() {
+    return speed;
+  };
+};
+
+var Bike = function() {
+  var gear; 
+  
+this.getGear=function(){
+  return gear;
+};
+  
+ this.setGear= function(num){
+   gear = num;
+   
+ };
+  // Only change code below this line.
+
+};
+
+var myCar = new Car();
+
+var myBike = new Bike();
+
+
+
+var arry =[1,4,6,7];
+
+var redy = arry.map(function(sed){
+  
+  return sed*6;
+  
+});
+
+console.log(redy)
+
+
+
+var array = [4,5,6,7,8];
+var singleVal = 0;
+
+// Only change code below this line.
+
+singleVal = array.reduce(function(total,num){
+  return total+num;
+  
+});
+
+
+
+var oldArray = [1,2,3,4,5,6,7,8,9,10];
+
+// Only change code below this line.
+
+var newArray = oldArray.filter(function(val){
+
+return val<6;
+
+});
+
+
+var array = [1, 12, 21, 2];
+
+// Only change code below this line.
+
+array.sort(function(a,b) {
+           
+    return b-a;      
+           });
+
+
+
+var array = [1,2,3,4,5,6,7];
+var newArray = [];
+
+// Only change code below this line.
+
+newArray = array.reverse();
+
+
+var oldArray = [1,2,3];
+var newArray = [];
+
+var concatMe = [4,5,6];
+
+// Only change code below this line.
+
+newArray = oldArray.concat(concatMe);
+
+
+
+var string = "Split me into an array";
+var array = [];
+
+// Only change code below this line.
+
+array = string.split(" ");
+
+
+var joinMe = ["Split","me","into","an","array"];
+var joinedString = '';
+
+// Only change code below this line.
+
+joinedString = joinMe.join(" ");
