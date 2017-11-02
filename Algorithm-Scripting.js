@@ -29,3 +29,21 @@ function factorialize(num) {
  }
 }
 
+var wer ="abcdefghijklmnopqrstuvwxyz"
+
+var rade = "derui_potre*werpol#&&&%%%34"
+
+for(var i =0; i<wer.length; i++){
+  
+for(var j=0; j< rade.length; j++){
+    
+if(wer[i]== rade[j] || (rade[j]== Number)){
+ 
+     var sed = rade[j]  
+    
+  console.log( sed);
+    }
+  }
+  
+}
+
