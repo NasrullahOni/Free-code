@@ -29,21 +29,30 @@ function factorialize(num) {
  }
 }
 
-var wer ="abcdefghijklmnopqrstuvwxyz"
-
-var rade = "derui_potre*werpol#&&&%%%34"
-
-for(var i =0; i<wer.length; i++){
-  
-for(var j=0; j< rade.length; j++){
-    
-if(wer[i]== rade[j] || (rade[j]== Number)){
- 
-     var sed = rade[j]  
-    
-  console.log( sed);
-    }
-  }
-  
+function palindrome(str) {
+var clean = str.replace(/[\W_]/g, "").toLowerCase();
+var reverse = clean.split("").reverse().join("");
+return clean === reverse;  
 }
 
+
+
+palindrome("A man, a plan, a canal. Panama");
+
+
+
+
+function findLongestWord(str) {
+ var sed = str.split(" ");
+  var longest =0;
+  for(var i =0; i<sed.length; i++){
+   if(longest < sed[i].length){
+     longest = sed[i].length; 
+   
+   }
+
+ } 
+return longest;
+}
+
+findLongestWord("The quick brown fox jumped over the lazy dog");
