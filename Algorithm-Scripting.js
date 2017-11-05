@@ -56,3 +56,35 @@ return longest;
 }
 
 findLongestWord("The quick brown fox jumped over the lazy dog");
+
+
+
+
+function titleCase(str) {
+var split = str.split(" ");
+for(var i=0; i< split.length; i++){
+  
+  var element= split[i].charAt(0).toUpperCase();
+  split[i] = element +  split[i].substr(1).toLowerCase() ;
+  
+}  
+return split.join(" ");
+}
+
+titleCase("I'm a little tea pot");
+
+function largestOfFour(arr) {
+  // You can do this!
+  var largest = 0;
+  var qes =[];
+  for(var i=0; i<arr.length; i++){
+    var sum = arr[i].reduce(function(total,num){
+     return Math.max(total, num)      
+    })
+  arr[i] = sum;
+  }
+
+return arr
+}
+
+largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);
