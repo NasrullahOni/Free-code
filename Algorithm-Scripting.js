@@ -176,3 +176,72 @@ return true;
 }
 
 mutation(["hello", "hey"]);
+
+
+
+
+function bouncer(arr) {
+  // Don't show a false ID to this bouncer.
+ 
+  var des = arr.filter(Boolean);
+  return des;
+    
+  
+}
+
+bouncer([7, "ate", "", false, 9]);
+
+
+
+function destroyer(arr) {
+  // Remove all the values
+  var args = Array.from(arguments).slice(1);
+  var ret = arr.filter(function(lop){
+    return !args.includes(lop);
+  });
+  
+  return ret;
+}
+
+destroyer([1, 2, 3, 1, 2, 3], 2, 3,4);
+
+
+
+
+
+
+
+function getIndexToIns(arr, num) {
+  // Find my place in this sorted array..
+  var index = 0;
+  if(arr.includes(num) == false){
+    arr.push(num);
+    var pet =arr.sort(function(a,b){
+      return a-b;
+    });
+   index = pet .indexOf(num);
+  }
+ else{
+   var et =arr.sort(function(a,b){
+     return a-b;
+   });
+   index =et.indexOf(num);
+ }
+return index;
+}
+
+getIndexToIns([40, 60], 50);
+
+OR
+
+function getIndexToIns(arr, num) {
+  // Find my place in this sorted array..
+  arr.push(num)
+  arr.sort(function(a,b){
+    return a-b
+  })
+
+return arr.indexOf(num)  
+}
+
+getIndexToIns([2, 20, 10], 19);
