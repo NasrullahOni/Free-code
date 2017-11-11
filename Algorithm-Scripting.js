@@ -245,3 +245,33 @@ return arr.indexOf(num)
 }
 
 getIndexToIns([2, 20, 10], 19);
+
+
+
+
+function rot13(str){
+var wepo =[];
+var dew =[];
+var evd = "";
+for(var i=0; i< str.length; i++){
+  dew.push(str.charCodeAt(i));
+  
+}
+for(var j=0; j<dew.length; j++){
+  if(dew[j]>=65 && dew[j] <=77  ){
+    dew[j]+=13;
+  }
+  else{
+    if(dew[j]>77)
+    dew[j]-=13;
+  }
+ wepo.push(dew[j]); 
+}
+
+for(var k=0; k<dew.length;k++){
+  evd += String.fromCharCode(dew[k]); 
+  
+}
+return evd;
+}
+rot13("SERR YBIR!");
