@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> The QUERY</title>
+
+   <meta charset="UTF-8">
+   <link rel="stylesheet" type="text/css" />
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+</head>
+<body>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"/>
+
+
+
+<script>
+$(document).ready(function(){
+	$("#getMessage").on("click" , function(){
+
+    $.getJSON("/json/cats.json", function(json) {
+  $(".message").html(JSON.stringify(json));
+})
+  
+	});
+})	
+</script>
+
+
+
+
+
+
+
+
+
+<style>
+
+
+
+
+
+</style>
+
+<div class ="container-fluid " id ="redit">
+<div class= "row text-center">
+ <h1> THE MAIN GUIDE </h1>
+ </div>
+ <div class ="row text-center  message">
+ 	<div class ="col-xs-12">
+ 	CHANGE IT
+    </div>
+</div>
+<div class= "row text-center">
+  <div class="col-xs-12">
+  <button id ="getMessage" class= "btn  btn-primary"> click here</button>
+  </div>
+</div>
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+</body>
+</html>
