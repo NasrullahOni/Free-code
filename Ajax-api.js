@@ -59,3 +59,49 @@ function listFeeds(response) {
         $("#newsfeed").append("<li>"+newsItem.title+"</li>");
     });
 }
+
+$(function() {
+   $("#loadButtons").click(function() {
+       $("li").remove(); // Remove any existing li elements
+       $(this).toggleClass("btn-primary"); // Switch to default grey
+       $(this).html("Loading"); // Change text of button
+       $.ajax({
+            url: "/codecademy/success",
+            dataType: "jsonp",
+            complete: function(jqXHR, textStatus) {
+                $("#loadButtons").html("Load Again"); // Change back text of button
+                $("#loadButtons").toggleClass("btn-primary"); // Revert back to default grey
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+            },
+            success: function(response) {
+                // Empty the #buttonfeed div
+                $("#buttonfeed").html("");
+                
+                // Go through the array of button data passed back and create a button for each
+                $.each(response.buttonData, function(i, item){
+                    $("#buttonfeed").append(buttonHTML(item,response.numberOfCalls));
+                });
+                
+                // Add a click event for button #1
+                $(generateButtonId(response, 1)).click(function(e) {
+                    $("#statusText").text("Clicked "+$(this).attr("id"));
+                });
+            }
+        });
+   });
+   
+   function buttonHTML(buttonData,counter) {
+       return "<a type='button' id='"+buttonData.btnId+counter+"' class='"+buttonData.btnClass+"' >"+buttonData.btnText+"</a>";
+   }
+   
+   // Add a click event for any button with class 'btn-primary'
+   $("body").on('click', 'a.btn-primary', function(e) {
+       $("#statusText").text("Clicked "+e.target.id);
+   });
+});
+
+// Take in the item number and generate an id for jQuery from the response data
+function generateButtonId(respData, itemNo) {
+    return "#"+respData.buttonData[itemNo].btnId+respData.numberOfCalls;
+}
