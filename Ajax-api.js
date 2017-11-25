@@ -205,3 +205,51 @@ $("body").on('click', 'a.btn-inverse', function(e) {
 function generateButtonId(respData, itemNo) {
     return "#"+respData.buttonData[itemNo].btnId+respData.numberOfCalls;
 }
+
+
+
+$(function() {
+   $("#loadHTML").click(function() {
+       $("#htmlcontainer").empty(); // Remove any existing HTML previously loaded
+
+       $.get("/codecademy/loadgreendiv", function(data, textStatus, jqXHR) {
+           $("#htmlcontainer").append(data)
+            // success
+        
+        });
+        
+        $.ajax({
+            url: "/codecademy/loadbluediv",
+            type:"GET",
+            contentType:'html',
+            success: function(data) {
+                // success
+                $("#htmlcontainer").append(data)
+            }
+        });
+   });
+});
+
+
+$(function() {
+   $.ajaxSetup( {
+    url:"/codecademy/default",
+    type:"get",
+    contentType:"GET",
+    success:function(data, textStatus,jqXHR){
+    $("#container").append(data)    
+    }
+   });
+
+   $("#loadHTML").click(function() {
+        $("#container").empty(); // Remove any existing HTML previously loaded
+
+        $.ajax({
+            data: { "color": "green" }
+        });
+        
+        $.ajax({
+            data: { "color": "blue" }
+        });
+   });
+});
