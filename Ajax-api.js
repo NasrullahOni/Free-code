@@ -204,52 +204,67 @@ $("body").on('click', 'a.btn-inverse', function(e) {
 // Take in the item number and generate an id for jQuery from the response data
 function generateButtonId(respData, itemNo) {
     return "#"+respData.buttonData[itemNo].btnId+respData.numberOfCalls;
-}
+}$(function() {
+   $("#resultsModal").modal({show: false});
 
-
-
-$(function() {
-   $("#loadHTML").click(function() {
-       $("#htmlcontainer").empty(); // Remove any existing HTML previously loaded
-
-       $.get("/codecademy/loadgreendiv", function(data, textStatus, jqXHR) {
-           $("#htmlcontainer").append(data)
-            // success
-        
-        });
-        
-        $.ajax({
-            url: "/codecademy/loadbluediv",
-            type:"GET",
-            contentType:'html',
-            success: function(data) {
-                // success
-                $("#htmlcontainer").append(data)
+   $("#mySubmit").click(function(e) {
+       e.preventDefault(),
+       $(this).attr('disabled','disabled'); // Switch to default grey
+       $(this).html("Sending"); // Change text of button
+       $.ajax({
+            url: "/codecademy/uploadForm",
+            data: $('#myForm').serialize() ,
+            type: 'post',
+            dataType: "text",
+            complete: function(jqXHR, textStatus) {
+                $("#mySubmit").removeAttr('disabled'); // Change back text of button
+                $("#mySubmit").toggleClass("btn-primary"); // Revert back to default grey
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                 $("#twitterstatus").text("Tweet failed.");
+            },
+            success: function(response) {
+                 $("#twitterstatus").text("Tweet sent successfully.");
             }
         });
    });
 });
 
+$(function(){   
+    $('#uploadFile').click(function (e) {
+        var inputFiles = $('#file').prop("files");
+        if (inputFiles) {
+            $(this).prop('disabled','disabled');
+            uploadFile(inputFiles[0], "myFile");
+        }
+    });
+    
+    function uploadFile(blobFile, fileName) {
+        var fd = new FormData();
+           fd.append(fileName,blobFile)
+        // Need to add filename and blobFile here
+        $("#progress").show();
+    
+        $.ajax({
+           url: "/codecademy/uploadAway",
+           type: "POST",
+           contentType:false,
+           processData:false,
+          data:fd,
 
-$(function() {
-   $.ajaxSetup( {
-    url:"/codecademy/default",
-    type:"get",
-    contentType:"GET",
-    success:function(data, textStatus,jqXHR){
-    $("#container").append(data)    
+           //other parameters here
+           
+           complete: function() {
+              $("#progress").hide();
+              $("#uploadFile").removeProp('disabled');
+           },
+           success: function(response) {
+               $("body").append('<div id="uploadStatus" class="alert alert-success">Upload Successful.</div>');
+           },
+           error: function(jqXHR, textStatus, errorMessage) {
+               $("body").append('<div id="uploadStatus" class="alert alert-error">Upload Failed.</div>');
+               console.log(errorMessage); // Optional
+           }
+        });
     }
-   });
-
-   $("#loadHTML").click(function() {
-        $("#container").empty(); // Remove any existing HTML previously loaded
-
-        $.ajax({
-            data: { "color": "green" }
-        });
-        
-        $.ajax({
-            data: { "color": "blue" }
-        });
-   });
 });
