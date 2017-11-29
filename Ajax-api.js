@@ -332,3 +332,67 @@ function updateDropDown(data) {
     });
     $('#one.chzn').trigger("liszt:updated");
 }
+
+$(function() {
+   $(document).ajaxSuccess(function(event, xhr, settings) {
+        if ($.inArray("json", settings.dataTypes) != -1) {
+            var myData = $.parseJSON(xhr.responseText);
+            $("#callStat").text(myData.numberOfCalls);
+        }   
+   });
+   
+   $("#loadFormData").click(function() {
+$("#mySubmit").prop("disabled","disabled");
+      var promise1= $.ajax({
+            url: "/codecademy/dropdown",
+            dataType: "json",
+      });
+            promise1.done(function(response,textStatus,jqXHR)
+            {
+               updateDropDown(response.dropDown); 
+            })
+             
+     var promise2= $.ajax({
+            url: "/codecademy/button",
+            dataType: "json",
+     });
+    promise2.done(function(response,textStatus,jqXHR) {
+               $("#two").html(response.btnText) 
+            })
+        });
+   var promise3=$.ajax({
+            url: "/codecademy/input",
+            dataType: "json",
+   });
+       promise3.done(function(response) {
+           $("#three").val(response.accessDate);
+            });
+   var promise4 = $.ajax({
+            url: "/codecademy/span",
+            dataType: "json",
+   });
+        promise4.done( function(response) {
+            $("#four").text(response.lastLoggedInUser)
+            })
+      var promise5=  $.get("/codecademy/div", function(response,textStatus, jqXHR){
+         $("#five").html(data) 
+        });
+   $.when(promise1,promise2,promise3,promise4,promise5).then(function(){$("#mySubmit").removeAttr("disabled","disabled")});
+   $("body").on('click', 'button.btn-info', function(e) {
+       var clicked = $(e.target);
+       alert("Button has text: "+clicked.text());
+   
+   });
+   
+   $('.chzn').chosen();
+   });
+function updateDropDown(data) {
+    $("#one.chzn").empty();
+    $.each(data,function(i,item){
+        $("#one.chzn").append($("<option>",{
+                                val: item.id,
+                                text: item.text
+        }));
+    });
+    $('#one.chzn').trigger("liszt:updated");
+}
