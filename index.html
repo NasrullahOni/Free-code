@@ -1,212 +1,81 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title> portfolio-page </title>
-  <meta charset="UTF-8">
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <title>The random quote</title>
+<meta charset ="UTF-8">
+<link rel="stylesheet" type="text/css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+
 </head>
+
 <body>
-<link href= "https://fonts.googleapis.com/css?family=Tangerine" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />
-<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
+<link rel="stylesheet" type="text/css"  type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"/>
 
 <style>
 
-body
-{
-margin-top:5px;
-background-color:grey;
-background-image: url("https://cdn57.androidauthority.net/wp-content/uploads/2015/11/00-best-backgrounds-and-wallpaper-apps-for-android.jpg");
+body{
+ color: purple;
+background-color:   
+#696969;
 }
-.write h1{
-  margin:40% 0px 0px 50%;
-  font-family:monospace;
-  font-size: 80px;
-  color:white;
-  opacity:0.7 
-}
-.topnav {
-  background-color: purple;
-  overflow: ;
-  height: 60px;
-  width: 100%;
-}
-.topnav a:hover{
-  color:red;
-  background-color:white;
-
-}
-
-.topnav a{
-  float:left;
-  padding: 0px 3px 6px 3px;
-  text-align: center;
-  font-weight: 80px;
-  font-size: 40px;
-  font-family: Tangerine ;
-  color:gold;
-
-}
-
-
-
-.topnav a: active{
-  color:green;
-}
-
-.fa{
-  color:white;
-}
-
-.social button:active{
-  color:green;
-}
-.fa-facebook{
-  color:white;
-  background-color: #1E90FF;
-}
-.fa:hover{
-  color:white;
-}
-a{
-  color:white;
-}
-.fa-twitter{
-  background-color:#1E90FF; 
+section{
+  min-height: 80vh ;
 }
 .well{
-background-color:#8A2BE2;
-}
-.write input{
-margin-right: -300px
-}
-
-p{
-color:white;
-text-transform: capitalize;
-font-weight: 200px;
-font-size: 30px;
+padding-bottom: 200px
 
 }
-.social{
-  margin-left: -100px;
-  margin-right: 30px
+ footer{
+  min-height: 9.5vh;
+  padding-top: 20px;
+  background-color: black;
+ }
+.wahab{
+ font-family:sans-serif;
+ font-size: 20px;
+ margin-top:30px;
+color:purple;
 }
-
-.profile h1{
-  font-family: monospace;
+.dert{
+  background-color: white;
 }
-.profile p{
-  font-style: italic;
-  font-size:20px;
-  text-align: center;
-  max-width: 100%
-}
-
-#sign{
-  float:right;
-  font-style: oblique;
-  margin-left: :3px;
-}
-button{
-  margin-left: 20px;
-  margin-top: 10px;
-  width: 7px;
-}
-.btn-block{
-  width:90px;
-}
-
-.deso img{
-width:30%;
-border:solid;
-border-color:#DDA0DD;
-border-radius: 
-
-}
-#sign-in label{
-  float: right;
-  margin-top: 20px;
-}
-.sret{
-  float:right;
-}
-legend{
-  color:white;
-}
-.ter{
-  text-transform: lowercase;
-  color:#4169E1;
-  margin-top:30px;
-  font-size: 35px;
-  font-family:Tangerine;
-  margin-left: 5px;
-}
-
-
 </style>
-<div class="topnav" id="mytopnav">
-  
-<a href="#">Home</a>
-<a   href="#aboutme">about</a>
-<a href="#postbottom">contact</a>
-<div class="container">
-<a href="#" id="sign" > Signup</a>
-</div>
-</div>
-<div class="sret">
- <form action="/submit" method="post">
-  <fieldset>
-    <legend> Login details</legend>
-  <br>
-  <input type="text" name="firstname" placeholder="input your name" required><br>
-  <br>
-  <input type="text" name="lastname" placeholder="input your password" required><br>
-<button class="btn btn-block" type="submit" name="SUBMIT"   >Login</button>
-</fieldset>
-  
-</form>
-</div>
-<div class=" container">
-  
-  <div class="row">
-    <div class="write col-md-2">
-<strong><h1 class="text-center" >  SHEGS PORTFOLIO </h1></strong>
 
-<div class="social ">
-<button class="btn btn-block fa fa-facebook"><a href="https://web.facebook.com/nasrullah.oluwasegun"> Facebook</a></button>
+<h1 style="text-align: center;color:purple;font-style: oblique;"> The Random Quotes </h1>
+<section class=" container quote">
+<div class="well dert">
+  <p style="font-family:monospace;" class="quote-text text-center wahab"> Check the quotes out</p>
+  <h3 class="redit"></h3>
+</div>
+<button type="button" id="quote" class=" btn">Quotes</button>
+<a class="drep" href="https://twitter.com/intent/tweet"  data-size="large" ><button style="float:right;" type="button" id="tweet" class=" btn">tweet it!</button></a>
 
-<button class="btn btn-block fa fa-twitter"><a href="#"> Twitter</a></button>
-</div>
-</div>
+</section>
 
+<footer>
+  <div class="container">
+  <p style="text-align: center; font-weight: 400;">Copy right @ Nasrullah oluwasegun</p>
 </div>
-<div class="profile">
-  <h1 style="color:#FF7F50" class="profile text-center" id="aboutme"> ABOUT ME </h1>
-  <p class="text-center">I have positive personality with the right combination of attitude, knowledge,and skills to make a difference in any organization. I possess leadership skills and also self-driven with capability to work with little or no supervision. Quick and willing to assimilate and apply new work procedures..</p>
-</div>
-</div>
-</div>
-<div class="container deso">
-
-<a href="#"> <img style="margin-left: 60px;" class="red" src="http://www.sahistory.org.za/sites/default/files/nelson_mandela_1918_2013.jpg"/></a>
-  </div>
-</div>
-
-<div class="container">
- <strong> <p class="ter" id="postbottom">Phone number: +2348136932264 </p></strong>
- <strong><p style="font-family:Tangerine; color:#4169E1; text-transform: lowercase;"> email-address: nasirullahoni@yahoo.co.uk</p></strong>
-</div>
-</div>
-
-
+</footer>
 
 <script>
-  $(document).ready(function(){
-  $("h1").addClass("animated shake"); 
-  $(".sret").children().css("color" "white")
+  var url ="http://api.forismatic.com/api/1.0/?method=getQuote&key=457653&format=jsonp&lang=en&jsonp=?";
+   var getQuote = function(data){
+   $(".quote-text").text(data.quoteText)
+   var quote= 'https://twitter.com/intent/tweet?text=' + data.quoteText + ' Author ' + data.quoteAuthor + '@Nasirllah'
+   if(data.quoteAuthor==""){
+    data.quoteAuthor= "Unknown"
+   }
+    
+  $(".redit").text("Author: "+ data.quoteAuthor);
+  $(".drep").attr("href", quote)
+  };
+  
+  $("#quote").click(function(){
+  $.getJSON(url, getQuote, 'jsonp')
+  
   });
 </script>
+
 </body>
 </html>
