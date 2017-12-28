@@ -14,19 +14,19 @@
 <style>
 
 body{
- color: purple;
 background-color:   
-#696969;
+  
+#2F4F4F;
 }
 section{
-  min-height: 80vh ;
+  min-height: 72vh ;
 }
 .well{
 padding-bottom: 200px
 
 }
  footer{
-  min-height: 9.5vh;
+  min-height: 11.5vh;
   padding-top: 20px;
   background-color: black;
  }
@@ -34,17 +34,20 @@ padding-bottom: 200px
  font-family:sans-serif;
  font-size: 20px;
  margin-top:30px;
-color:purple;
+color:grey;
 }
 .dert{
-  background-color: white;
+  background-color:   
+#2F4F4F;
 }
 </style>
 
-<h1 style="text-align: center;color:purple;font-style: oblique;"> The Random Quotes </h1>
+<h1 style="text-align: center;color:  
+#708090;font-style: oblique;"> The Random Quotes </h1>
+<p class="text-center" style="font-size: 25px; color:#708090"> This are random quotes from the<a href ="https://forismatic.com"> Forismatic </a> website using ApI, and can also tweet them to your handle </p>
 <section class=" container quote">
 <div class="well dert">
-  <p style="font-family:monospace;" class="quote-text text-center wahab"> Check the quotes out</p>
+  <p style="font-family:monospace;" class="quote-text text-center wahab"> To view the quotes click on the quotes button</p>
   <h3 class="redit"></h3>
 </div>
 <button type="button" id="quote" class=" btn">Quotes</button>
@@ -61,13 +64,13 @@ color:purple;
 <script>
   var url ="http://api.forismatic.com/api/1.0/?method=getQuote&key=457653&format=jsonp&lang=en&jsonp=?";
    var getQuote = function(data){
-   $(".quote-text").text(data.quoteText)
+   $(".quote-text").text('"'+data.quoteText +'"')
    var quote= 'https://twitter.com/intent/tweet?text=' + data.quoteText + ' Author ' + data.quoteAuthor + '@Nasirllah'
    if(data.quoteAuthor==""){
     data.quoteAuthor= "Unknown"
    }
     
-  $(".redit").text("Author: "+ data.quoteAuthor);
+  $(".redit").text("Author: "+ data.quoteAuthor).css("color" ,"green");
   $(".drep").attr("href", quote)
   };
   
